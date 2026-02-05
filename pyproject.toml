@@ -1,0 +1,49 @@
+[build-system]
+requires = ['hatchling']
+build-backend = 'hatchling.build'
+
+[project]
+name = 'diff-set'
+description = 'A backend-agnostic diff engine for comparing and synchronizing datasets.'
+authors = [
+	{ name = 'Logan', email = 'log@ntoler.dev' }
+]
+license = 'MIT'
+license-files = ['LICENSE']
+requires-python = '>=3.11'
+readme = 'README.md'
+version = '0.1.0'
+
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+	'pytest',
+	'ruff',
+	'pre-commit',
+	'mypy',
+]
+
+[project.urls]
+Homepage = 'https://github.com/tolerl1/diff-set'
+Source = 'https://github.com/tolerl1/diff-set'
+
+[tool.ruff]
+target-version = 'py311'
+line-length = 100
+
+[tool.ruff.lint]
+select = [
+	'E',    # pycodestyle (Error)
+	'F',    # Pyflakes
+	'I',    # isort
+	'UP',   # pyupgrade
+	'B',    # flake8-bugbear
+	'A',    # flake8-builtins
+]
+ignore = ['E501']
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "tab"
+docstring-code-format = true
